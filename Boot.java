@@ -4,29 +4,41 @@
  * @author R. Jordan Crouser + CSC120 (Fall '22))
  * @version 13 October 2022
  */
+
+/**
+ * Represents a Scarecrow's shoes.
+ */
 public class Boot {
   
     private String direction;
-  
-    /* Constructor */
+
+    /**
+     * Creates a new Boot with a direction.
+     * @param direction String foot the boot will be. Has three options.
+     */
     public Boot(String direction) {
         this.direction = direction.toLowerCase();
     }
 
-    /*
-     * TODO: Modify this method to print ASCII Art Boot
+    /**
+     * Displays the Scarecrow's shoe based on the direction input.
      */
     public void display() {
-        if (this.direction.equals("left")) {
-          System.out.println("Left boot?");
-        } else if (this.direction.equals("right")) {
-          System.out.println("Right boot?");
-        } else {
-          System.out.println("Which boot?");
+        if(this.direction.equals("left")) {
+          System.out.println("       |______|");
+        }
+        if(this.direction.equals("right")) {
+          System.out.println("              |______|");
+        }
+        if(this.direction.equals("both")) {
+          System.out.println("       |______||______|");
         }
     }
 
-    /* main method (for testing) */
+    /**
+     * Creates a new boot.
+     * @param args An empty array of strings.
+     */
     public static void main(String[] args) {
         Boot myLeftBoot = new Boot("left");
         Boot myRightBoot = new Boot("right");

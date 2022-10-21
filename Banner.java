@@ -4,26 +4,66 @@
  * @author R. Jordan Crouser + CSC120 (Fall '22))
  * @version 13 October 2022
  */
+
+/**
+ * Represents a Scarecrow's banner.
+ */
 public class Banner {
     
-    /* Message to print on Banner */
     private String message;
 
-    /* Constructor */
+    /**
+     * Creates a new Banner with message m.
+     * @param m String message.
+     */
     public Banner(String m) {
         this.message = m;
     }
 
-    /*
-     * TODO: Modify this method to print a decorative banner, resized to fit the message
+    /**
+     * Displays the Scarecrow's Banner and alters the ASCII to fit the length of the message.
      */
     public void display() {
-        System.out.println(this.message);
+        System.out.print("   ****");
+        for(int i = 0; i < this.message.length(); i++)
+        {
+            System.out.print("*");
+        }
+        System.out.println("****");
+        System.out.print(" *** ~~");
+        for(int i = 0; i < this.message.length(); i++)
+        {
+            System.out.print("~");
+        }
+        System.out.println("~~ ***");
+        System.out.print("*** ~  ");
+        System.out.print(this.message);
+        System.out.println("  ~ ***");
+        System.out.print(" *** ~~");
+        for(int i = 0; i < this.message.length(); i++)
+        {
+            System.out.print("~");
+        }
+        System.out.println("~~ ***");
+        System.out.print("   ****");
+        for(int i = 0; i < this.message.length(); i++)
+        {
+            System.out.print("*");
+        }
+        System.out.println("****");
     }
 
-    /* main method (for testing) */
+    /**
+     * Creates a new banner with a message.
+     * @param args An empty array of strings.
+     */
     public static void main(String[] args) {
-        Banner myBanner = new Banner("Hello world");
+        String message = "test";
+        if(args.length > 0) {
+            message = args[0];
+        }
+        //String message = args[0];
+        Banner myBanner = new Banner(message);
         myBanner.display();
     }
 }

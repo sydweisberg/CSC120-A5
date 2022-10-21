@@ -5,46 +5,49 @@
  * @version 13 October 2022
  */
 
+/**
+ * Represents an ASCII Scarecrow.
+ */
 class Scarecrow {
 
-    /* Parts of the Scarecrow
-     * TODO: Uncomment remaining parts as you implement each class
-     */
     private Pumpkin head;
-    // private Shirt body;
-    // private Pants legs;
-    // private Hat hat;
-    // private Boot leftFoot;
-    // private Boot rightFoot;
-    // private Banner sign;
-    private String message;
+    private Shirt body;
+    private Pants legs;
+    private Boot shoes;
+    private Banner sign;
 
-    /* Constructor
-     * TODO: initialize remaining parts
+    /**
+     * Creates a new Scarecrow with a head, body, legs, shoes, and sign.
      */
-    public Scarecrow(Pumpkin h) {
+    public Scarecrow(Pumpkin h, Shirt s, Pants p, Boot b, Banner ba) {
         head = h;
-    }
+        body = s; 
+        legs = p;
+        shoes = b;
+        sign = ba;
 
-    /* Displays the Scarecrow 
-     * TODO: call the .display() method of each part... 
-     *       ...in the right order!
-    */
+    }
+    /**
+     * Displays the different Scarecrow objects in the correct order.
+     */
     public void display() {
+        sign.display();
         head.display();
+        body.display();
+        legs.display();
+        shoes.display();
     }
 
-    /* Main method (for testing) */
+    /**
+     * Takes an input from the command line and creates a Scarecrow that utilizes the message.
+     * @param args An empty array of strings.
+     */
     public static void main(String[] args) {
-
-        // TODO: Don't forget to update the line below if you modify the constructor
-        Scarecrow myScarecrow = new Scarecrow(new Pumpkin());
-
-        // If a message was passed in on the command line, extract and store it
-        // TODO: in Step 4, you'll pass this value along to your Banner constructor
-        if (args.length > 0) {
-            myScarecrow.message = args[0];
+        String message = "HAPPY FALL!";
+        if(args.length > 0) {
+            message = args[0]; // Message is set equal to the input in the console following java Scarecrow
         }
+        Scarecrow myScarecrow = new Scarecrow(new Pumpkin(), new Shirt(), new Pants(), new Boot("both"), new Banner(message));
 
         myScarecrow.display();
     }

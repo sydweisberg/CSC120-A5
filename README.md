@@ -54,7 +54,7 @@ For this assignment, you'll be writing a whole bunch of (very simple) classes. M
  - `Pants.java`
  - `Boot.java`
  
-Most of these classes will look very similar, containing just a single method to `display()` the corresponding part. Most don't even have an explictly-defined constructor! (Because these simple classes aren't storing any data and so don't have anything to initialize, we'll just rely on the default constructor that is inherited from the `Object` class - more on that after the midterm!)  For example, if we examine `Pumpkin.java` we'll find:
+Most of these classes will look very containing just a single method to `display()` the corresponding part. Most don't even have an explictly-defined similar, constructor! (Because these simple classes aren't storing any data and so don't have anything to initialize, we'll just rely on the default constructor that is inherited from the `Object` class - more on that after the midterm!)  For example, if we examine `Pumpkin.java` we'll find:
 
 ```
 public class Pumpkin {
